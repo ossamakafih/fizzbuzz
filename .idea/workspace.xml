@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d20c1d8-49a5-423a-bfa0-cec869ebe526" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/soat/fizzbuzz/LogProcessor.scala" afterPath="$PROJECT_DIR$/src/main/scala/soat/fizzbuzz/LogProcessor.scala" />
+      <change beforePath="$PROJECT_DIR$/scriptFile.scala" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
