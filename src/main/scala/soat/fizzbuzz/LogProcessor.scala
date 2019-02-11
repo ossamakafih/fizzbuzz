@@ -14,7 +14,7 @@ object LogProcessor {
     val spark = SparkSession.builder().config(conf).getOrCreate()
     val sc = spark.sparkContext
 
-    val data = sc.textFile("/home/soat/Bureau/tornik-map-20171006.10000.tsv")
+    val data = sc.textFile("tornik-map-20171006.10000.tsv")
 
     //Map the line of log to case class
     val logRDD: RDD[Log] = data.filter(log => log.contains("map")).map{ logs =>
