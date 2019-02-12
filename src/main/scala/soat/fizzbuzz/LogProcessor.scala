@@ -38,6 +38,12 @@ object LogProcessor {
     //create dataframe with final result
     val df = joinedRDD.toDF(colNames : _*)
     df.show()
+
+
+    val finalResult = joinedRDD.collect().toList
+
+    //format the final result to desired printing
+    finalResult.foreach(item => println("%s \t %d \t %s".format(item._1, item._2, item._3)))
   }
 
 
