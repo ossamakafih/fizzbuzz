@@ -28,7 +28,7 @@ object LogProcessor {
     val zoomRDD: RDD[(String, List[Double])] = logRDD.map(log => (log.viewmode, log.zoom)).groupByKey().map(l => (l._1, l._2.toList.distinct))
 
     //create the final RDD with the 3 fields
-    val joinedRDD = viewModeCount.join(zoomRDD).map(log => (log._1, log._2._1, log._2._2 mkString ","))
+    val joinedRDD = viewModeCount.join(zoomRDD).map(log => (log._1, log._2._1, log._2._2 mkString ",")).cache()
 
 
     import spark.implicits._
