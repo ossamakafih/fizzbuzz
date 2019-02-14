@@ -8,10 +8,9 @@ import org.apache.spark.sql.SparkSession
 
 object LogProcessor {
 
-  def process(): Unit= {
+  def process(spark: SparkSession): Unit= {
 
-    val conf = new SparkConf().setAppName("FizzBuzz Mappy").setMaster("local[*]")
-    val spark = SparkSession.builder().config(conf).getOrCreate()
+
     val sc = spark.sparkContext
 
     val data = sc.textFile("tornik-map-20171006.10000.tsv")
@@ -48,7 +47,9 @@ object LogProcessor {
 
 
   def main(args: Array[String]): Unit = {
-    process()
+    val conf = new SparkConf().setAppName("FizzBuzz Mappy").setMaster("local[*]")
+    val spark = SparkSession.builder().config(conf).getOrCreate()
+    process(spark)
   }
 
 }
